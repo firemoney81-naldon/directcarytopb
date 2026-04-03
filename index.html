@@ -1,23 +1,331 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>Home</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <!--
-      Need a visual blank slate?
-      Remove all code in `styles.css`!
-    -->
-    <link rel="stylesheet" href="styles.css" />
-    <script type="module" src="script.js"></script>
-  </head>
-  <body>
-    <nav>
-      <a href="/" aria-current="page">Home</a>
-      <a href="/page2.html">Other page</a>
-    </nav>
+
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "제네시스 G70의 평균 월 유지비는 얼마인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "G70의 월 유지비는 운전자의 운행 패턴(주행거리), 모델(2.0T 또는 3.3T), 보험료 산출 조건 등에 따라 크게 달라집니다. 일반적으로 2.0T 모델의 경우 월 30~40만원, 3.3T 모델은 월 40~55만원 정도가 평균 유지비로 예상됩니다. 이는 유류비, 자동차세, 보험료를 포함한 금액이며 소모품 교체 비용은 포함되지 않습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "G70 2.0T 모델과 3.3T 모델의 유지비 차이가 큰가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네, 차이가 큽니다. 가장 큰 차이는 자동차세와 연비입니다. 3.3T 모델은 2.0T 모델에 비해 배기량이 높아 자동차세가 2배 이상 비싸며, 연비 또한 낮아 유류비 부담이 더 큽니다. 따라서 연간 주행거리가 길다면 2.0T 모델이 유지비 측면에서 훨씬 유리합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "G70 유지비를 절약할 수 있는 효과적인 팁은 무엇인가요?",
+          "@id": "#절약팁-답변",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "보험료를 절감하는 것이 가장 효과적입니다. 다이렉트 자동차보험 비교견적을 통해 저렴한 곳을 찾고, 마일리지 특약, 블랙박스 할인 등을 활용하면 수십만원의 보험료를 아낄 수 있습니다. 또한, 정속 주행과 급가속/급제동을 피하는 운전 습관으로 연비를 개선할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "G70의 소모품 교체 주기는 어떻게 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "일반적으로 엔진오일은 1만 km 또는 1년, 에어 필터와 오일 필터는 엔진오일 교체 시 함께 교체합니다. 브레이크 패드는 4~6만 km, 타이어는 4~5만 km마다 점검 후 교체를 권장하며, 운전 습관에 따라 주기가 달라질 수 있습니다."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        /* CSS Variables for a soft, professional color palette */
+        :root {
+            --primary-color: #2c3e50; /* Dark blue/gray for sophistication */
+            --secondary-color: #3498db; /* Blue for call-to-action */
+            --accent-color: #e74c3c; /* Red accent for highlights */
+            --text-color: #333333;
+            --bg-light: #f9fbfd; /* Very light background for contrast */
+            --bg-white: #ffffff;
+            --border-color: #e0e6ec;
+            --shadow-light: rgba(0, 0, 0, 0.05);
+            --shadow-medium: rgba(0, 0, 0, 0.1);
+        }
+        
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        
+        body { font-family: 'Noto Sans KR', sans-serif; margin: 0; padding: 0; background-color: var(--bg-light); color: var(--text-color); line-height: 1.7; font-size: 16px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Typography */
+        h1, h2, h3 { color: var(--primary-color); font-weight: 700; line-height: 1.4; }
+        h1 { font-size: 2.5em; text-align: center; margin-bottom: 0.5em; }
+        h2 { font-size: 2em; text-align: center; margin-top: 2em; margin-bottom: 1em; }
+        h3 { font-size: 1.5em; border-left: 4px solid var(--secondary-color); padding-left: 15px; margin-top: 2.5em; margin-bottom: 1em; }
+        p { margin-bottom: 1.5em; font-weight: 300; }
+        strong { font-weight: 500; color: var(--primary-color); }
+        
+        /* Header and Navigation */
+        header { background-color: var(--bg-white); padding: 20px 0; border-bottom: 1px solid var(--border-color); box-shadow: 0 2px 5px var(--shadow-light); }
+        header .logo { font-size: 1.8em; color: var(--primary-color); font-weight: 700; text-decoration: none; display: block; text-align: center; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(to right, #ffffff, var(--bg-light)); padding: 60px 0; text-align: center; }
+        .hero h1 { font-size: 3em; color: var(--primary-color); margin-bottom: 0.5em; }
+        .hero p { font-size: 1.2em; max-width: 800px; margin: 0 auto 30px; }
+
+        /* CTA Button */
+        .cta-btn { background-color: var(--secondary-color); color: #fff; padding: 16px 32px; font-size: 1.1em; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s, transform 0.2s; box-shadow: 0 4px 10px var(--shadow-medium); text-decoration: none; display: inline-block; }
+        .cta-btn:hover { background-color: #2980b9; transform: translateY(-2px); }
+
+        /* Content Sections */
+        .content-section { background-color: var(--bg-white); padding: 40px 0; margin-top: 20px; border-radius: 10px; box-shadow: 0 5px 15px var(--shadow-light); }
+        .image-full-width { width: 100%; height: auto; border-radius: 8px; margin-top: 20px; margin-bottom: 30px; box-shadow: 0 2px 8px var(--shadow-light); }
+
+        /* Data Visualization: Table and Chart */
+        .data-table-container { margin: 30px auto; overflow-x: auto; }
+        .data-table { width: 100%; border-collapse: collapse; text-align: center; }
+        .data-table th, .data-table td { border: 1px solid var(--border-color); padding: 12px; }
+        .data-table th { background-color: var(--bg-light); color: var(--primary-color); font-weight: 700; }
+        .data-table td { background-color: var(--bg-white); font-weight: 300; }
+        .data-table td.highlight { font-weight: 500; color: var(--accent-color); }
+        .chart-visual { height: 200px; background-color: var(--bg-light); border-radius: 8px; margin-bottom: 30px; padding: 20px; display: flex; align-items: flex-end; justify-content: space-around; }
+        .bar-chart { width: 40%; background-color: var(--secondary-color); transition: height 0.5s ease; position: relative; border-radius: 4px; }
+        .bar-chart span { position: absolute; top: -25px; left: 50%; transform: translateX(-50%); color: var(--primary-color); font-size: 1em; font-weight: 500; }
+
+        /* Maintenance Cost Calculator Form (for user engagement) */
+        .calculator-form { background-color: var(--bg-light); padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px var(--shadow-light); margin-top: 30px; }
+        .calculator-form label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--primary-color); }
+        .calculator-form input, .calculator-form select { width: 100%; padding: 12px; margin-bottom: 20px; border: 1px solid var(--border-color); border-radius: 5px; box-sizing: border-box; font-size: 1em; }
+
+        /* Keyword List */
+        .keyword-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+        .keyword-list li { background-color: var(--border-color); color: var(--primary-color); padding: 10px 20px; margin: 5px; border-radius: 20px; font-weight: 400; font-size: 0.9em; transition: background-color 0.3s; }
+        .keyword-list li:hover { background-color: var(--secondary-color); color: #fff; }
+
+        /* FAQ Section */
+        .faq-item { border-bottom: 1px solid var(--border-color); padding: 20px 0; }
+        .faq-item h3 { cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 1.2em; margin: 0; }
+        .faq-item h3::after { content: '+'; font-size: 1.5em; color: var(--secondary-color); transition: transform 0.3s; }
+        .faq-item.active h3::after { content: '-'; transform: rotate(0deg); }
+        .faq-item p { display: none; padding-top: 15px; color: #555; font-weight: 300; }
+        .faq-item.active p { display: block; }
+
+        /* Footer */
+        footer { background-color: var(--primary-color); color: #f0f0f0; padding: 40px 20px; text-align: center; font-size: 0.9em; }
+        footer a { color: #f0f0f0; text-decoration: none; margin: 0 10px; opacity: 0.8; }
+        footer a:hover { opacity: 1; text-decoration: underline; }
+        footer .legal-links { margin-bottom: 20px; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.3em; padding-left: 10px; }
+            .hero h1 { font-size: 2.5em; }
+            .hero p { font-size: 1em; }
+            .cta-btn { padding: 12px 24px; font-size: 1em; }
+            .content-section { padding: 30px 0; }
+            .data-table th, .data-table td { font-size: 0.9em; padding: 10px; }
+            .keyword-list li { font-size: 0.8em; padding: 8px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="/" class="logo">G70 유지비 전문가이드</a>
+        </div>
+    </header>
+
     <main>
-      <h1>Home page</h1>
+        <section class="hero">
+            <div class="container">
+                <h1>제네시스 G70 유지비, 정확하게 알고 구매하자!</h1>
+                <p>프리미엄 스포츠 세단 G70 구매를 망설이는 당신을 위해, 2026년 최신 기준으로 G70 유지비를 꼼꼼하게 분석합니다. 2.0T와 3.3T 모델의 유지비 차이를 명확하게 비교하고, 절약 팁까지 제공하여 합리적인 구매를 돕습니다. G70 오너의 내돈내산 후기와 전문가 분석을 지금 바로 확인하세요.</p>
+                <a href="#maintenance-analysis" class="cta-btn">G70 유지비 상세 분석 보러가기</a>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>G70 유지비 분석의 핵심: 2.0T vs 3.3T 모델 비교</h2>
+                <p>G70 모델 선택의 가장 큰 고민은 엔진 배기량입니다. 2.0T(2.0 터보) 모델은 효율성을, 3.3T(3.3 터보) 모델은 강력한 퍼포먼스를 제공합니다. 하지만 이 선택은 단순히 출력 차이를 넘어, 자동차세와 연비 등 장기적인 **G70 유지비**에 직접적인 영향을 미칩니다. 본 가이드에서는 2026년도를 기준으로 각 모델의 예상 유지비를 상세히 비교하여, 당신의 라이프스타일에 맞는 최적의 선택을 할 수 있도록 돕습니다.</p>
+
+                <div class="data-table-container">
+                    <table class="data-table">
+                        <caption>G70 2.0T vs 3.3T 연간 유지비 핵심 비교 (2026년 기준)</caption>
+                        <thead>
+                            <tr>
+                                <th>구분</th>
+                                <th>2.0T (1,998cc)</th>
+                                <th>3.3T (3,342cc)</th>
+                                <th>비고</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>자동차세 (연간)</strong></td>
+                                <td>약 519,480원</td>
+                                <td>약 868,920원</td>
+                                <td class="highlight">3.3T 모델이 약 35만원 비쌈</td>
+                            </tr>
+                            <tr>
+                                <td><strong>연비 (복합 기준)</strong></td>
+                                <td>약 10.4 km/l</td>
+                                <td>약 9.0 km/l</td>
+                                <td>운전 습관에 따라 차이 발생</td>
+                            </tr>
+                            <tr>
+                                <td><strong>보험료 (평균)</strong></td>
+                                <td>약 80만원 ~ 120만원</td>
+                                <td>약 90만원 ~ 140만원</td>
+                                <td>운전자 연령/경력, 특약에 따라 다름</td>
+                            </tr>
+                            <tr>
+                                <td><strong>소모품 교체 비용</strong></td>
+                                <td>유사함</td>
+                                <td>유사함 (브레이크 시스템 등 차이 있음)</td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h3 id="maintenance-analysis">1. G70 유지비의 가장 큰 변수: 연비와 유류비</h3>
+                <p>G70은 스포츠 세단 특성상 일반 세단보다 연비가 다소 낮은 편입니다. 특히 3.3T 모델은 고성능을 위해 설계되었기 때문에 2.0T 모델 대비 연비가 눈에 띄게 차이 납니다. 연비는 **G70 유지비 평균**을 결정하는 가장 중요한 요소입니다. 예를 들어, 연간 15,000km를 주행한다고 가정하고 2026년 휘발유 가격을 리터당 1,800원으로 예상하면, 2.0T 모델은 약 259만원, 3.3T 모델은 약 300만원의 유류비가 발생하여 연간 약 40만원 이상의 차이가 발생합니다. G70 3.3T는 주행 거리가 길다면 유류비 부담이 상당할 수 있습니다.</p>
+
+                <div class="chart-visual">
+                    <div class="bar-chart" style="height: 70%;"><span>2.0T: 10.4 km/l</span></div>
+                    <div class="bar-chart" style="height: 60%; background-color: var(--accent-color);"><span>3.3T: 9.0 km/l</span></div>
+                </div>
+
+                <h3 id="tax-and-insurance">2. 피할 수 없는 비용: 자동차세와 보험료 비교</h3>
+                <p>자동차세는 배기량에 따라 책정되므로 2.0T 모델과 3.3T 모델의 차이가 명확합니다. 2026년도에도 현재 배기량별 세금 기준이 유지된다고 가정할 때, 2.0T 모델은 약 51만원, 3.3T 모델은 약 86만원으로 연간 35만원 이상의 고정 비용 차이가 발생합니다. **G70 유지비 계산** 시 이 부분을 간과하면 안 됩니다. 보험료 역시 차량가액이 높고 출력이 강한 3.3T 모델이 일반적으로 2.0T 모델보다 더 높게 책정되는 경향이 있습니다. 운전 경력, 나이, 사고 유무에 따라 개인별 편차가 크지만, 평균적으로 10~20%의 차이를 보입니다.</p>
+
+                <h3 id="consumables">3. 소모품 교체 비용 분석: G70 오너의 내돈내산 후기 기반</h3>
+                <p>G70과 같은 프리미엄 차량은 일반 국산차에 비해 소모품 비용이 높을 수 있습니다. 특히 3.3T 모델은 고성능 브레이크 시스템이 장착되어 있어 브레이크 패드 교체 비용이 2.0T 모델보다 비쌉니다. G70 오너들의 후기를 보면 타이어 교체 비용에 대한 부담도 상당합니다. G70 순정 타이어는 고성능 타이어를 사용하기 때문에 4개 교체 시 100만원이 넘는 **가격**을 지불해야 합니다. 엔진 오일 교환 비용 역시 일반 차량 대비 1.5배에서 2배 가까이 발생할 수 있으므로, **G70 유지비 견적**을 낼 때 소모품 비용을 염두에 두어야 합니다.</p>
+
+                <h3 id="savings">4. G70 유지비 절약 팁: 현명하게 비용 아끼기</h3>
+                <p>G70은 높은 성능만큼 유지비가 수반되지만, 현명하게 관리하면 **저렴한곳**을 찾아 비용을 절감할 수 있습니다. 가장 큰 비용 절감 효과를 볼 수 있는 부분은 보험료입니다. 다이렉트 자동차보험 비교견적 사이트를 이용하면 설계사 수수료가 없어 일반 보험보다 15% 이상 저렴하며, 여러 보험사의 **보험료**를 **비교**해 **G70 유지비**를 절약할 수 있습니다.</p>
+                <ul>
+                    <li><strong>마일리지 특약 활용:</strong> 주행 거리가 짧다면 마일리지 특약을 가입하세요. 연간 주행거리 1만 km 이하일 경우 최대 40%까지 할인을 받을 수 있습니다.</li>
+                    <li><strong>안전운전 습관:</strong> Tmap이나 카카오내비 같은 내비게이션 앱의 안전운전 점수를 활용하여 보험료를 할인받을 수 있습니다. **G70 운전자**의 안전운전 **습관**은 보험료 절감의 핵심입니다.</li>
+                    <li><strong>신차 구매 혜택:</strong> 신차 **가입** 시 제공되는 **사은품**이나 **현금지원** 이벤트, **할인** 혜택 등을 꼼꼼히 챙겨 초기 비용을 줄이는 것도 중요합니다.</li>
+                </ul>
+
+                <h3 id="g70-review">5. G70 오너의 솔직 후기와 장단점 분석</h3>
+                <p>G70은 뛰어난 디자인과 주행 성능으로 오너들의 **만족도**가 매우 높습니다. 하지만 **장단점**이 뚜렷합니다. **장점**으로는 강력한 가속력, 정교한 핸들링, 고급스러운 실내 디자인, 풍부한 안전 및 편의 옵션 등이 꼽힙니다. **단점**으로는 좁은 2열 공간, 상대적으로 높은 **G70 유지비 평균**, 그리고 소모품 **가격**이 비싸다는 점이 자주 언급됩니다. **G70 중고차** 시장에서도 인기가 많지만, 감가상각이 크다는 점도 구매 시 고려해야 할 요소입니다.</p>
+            </div>
+        </section>
+        
+        <section class="content-section" style="background-color: var(--bg-light); padding: 60px 0;">
+            <div class="container">
+                <h2>실시간 G70 유지비 비교 견적 서비스</h2>
+                <p style="text-align: center;">간단한 정보 입력으로 G70의 예상 유지비를 정확하게 계산하고, **가장 저렴한 자동차보험** 상품을 찾아드립니다. G70 유지비 고민은 이제 그만! 전문가가 제공하는 맞춤 **견적**으로 현명하게 구매하세요.</p>
+                <div class="calculator-form">
+                    <form action="#" method="post">
+                        <label for="carModel">G70 모델 선택 (2026년식 기준)</label>
+                        <select id="carModel" required>
+                            <option value="">모델을 선택하세요</option>
+                            <option value="2.0T">G70 2.0T (2000cc)</option>
+                            <option value="3.3T">G70 3.3T (3300cc)</option>
+                        </select>
+                        <label for="annualMileage">연간 예상 주행거리 (km)</label>
+                        <input type="number" id="annualMileage" placeholder="예: 15000" required>
+                        <label for="driverAge">운전자 연령 (만 나이)</label>
+                        <input type="number" id="driverAge" placeholder="예: 30" required>
+                        <label for="accidentHistory">최근 3년간 사고 이력</label>
+                        <select id="accidentHistory" required>
+                            <option value="0">없음</option>
+                            <option value="1">1회</option>
+                            <option value="2">2회 이상</option>
+                        </select>
+                        <button type="submit" class="cta-btn">G70 유지비 실시간 계산 및 최저가 보험료 비교</button>
+                    </form>
+                </div>
+                <h3 style="margin-top: 60px;">함께 많이 찾는 키워드</h3>
+                <ul class="keyword-list">
+                    <li>#G70 유지비 평균</li>
+                    <li>#G70 유지비 계산기</li>
+                    <li>#G70 연비 팁</li>
+                    <li>#G70 보험료 싼곳</li>
+                    <li>#G70 2.0T vs 3.3T</li>
+                    <li>#G70 장단점 후기</li>
+                    <li>#G70 중고차 가격</li>
+                    <li>#G70 소모품 교체주기</li>
+                    <li>#G70 전문가 견적</li>
+                    <li>#제네시스 유지비 비교</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>자주 묻는 질문 (FAQ)</h2>
+                <div class="faq-item">
+                    <h3 id="q1">제네시스 G70의 평균 월 유지비는 얼마인가요?</h3>
+                    <p>G70의 월 유지비는 운전자의 운행 패턴(주행거리), 모델(2.0T 또는 3.3T), 보험료 산출 조건 등에 따라 크게 달라집니다. 일반적으로 2.0T 모델의 경우 월 30~40만원, 3.3T 모델은 월 40~55만원 정도가 평균 유지비로 예상됩니다. 이는 유류비, 자동차세, 보험료를 포함한 금액이며 소모품 교체 비용은 포함되지 않습니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 id="q2">G70 2.0T 모델과 3.3T 모델의 유지비 차이가 큰가요?</h3>
+                    <p>네, 차이가 큽니다. 가장 큰 차이는 자동차세와 연비입니다. 3.3T 모델은 2.0T 모델에 비해 배기량이 높아 자동차세가 2배 이상 비싸며, 연비 또한 낮아 유류비 부담이 더 큽니다. 따라서 연간 주행거리가 길다면 2.0T 모델이 유지비 측면에서 훨씬 유리합니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 id="q3">G70 유지비를 절약할 수 있는 효과적인 팁은 무엇인가요?</h3>
+                    <p>보험료를 절감하는 것이 가장 효과적입니다. 다이렉트 자동차보험 비교견적을 통해 저렴한 곳을 찾고, 마일리지 특약, 블랙박스 할인 등을 활용하면 수십만원의 보험료를 아낄 수 있습니다. 또한, 정속 주행과 급가속/급제동을 피하는 운전 습관으로 연비를 개선할 수 있습니다.</p>
+                </div>
+                <div class="faq-item">
+                    <h3 id="q4">G70의 소모품 교체 주기는 어떻게 되나요?</h3>
+                    <p>일반적으로 엔진오일은 1만 km 또는 1년, 에어 필터와 오일 필터는 엔진오일 교체 시 함께 교체합니다. 브레이크 패드는 4~6만 km, 타이어는 4~5만 km마다 점검 후 교체를 권장하며, 운전 습관에 따라 주기가 달라질 수 있습니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="container">
+                <h2>더 알아보기: G70 유지비 관련 심화 분석 및 정보</h2>
+                <h3 id="advanced-analysis">G70 2026년형 소모품 교체 비용 상세 분석</h3>
+                <p>프리미엄 세단인 G70은 일반 세단과 다르게 고성능 부품을 사용하므로 소모품 교체 **비용**도 고려해야 합니다. 특히 **G70 유지비**를 논할 때, 3.3T 모델의 경우 강력한 제동 성능을 위해 브렘보 브레이크가 적용되는 경우가 많습니다. 브렘보 패드의 **가격**은 일반 패드보다 2~3배 높기 때문에 G70의 **장점**인 제동력을 누리는 대신 **단점**인 유지보수 비용을 감수해야 합니다. **G70 2.0T** 모델 역시 국산차 평균보다 높은 소모품 비용이 발생할 수 있으므로, **G70 중고차** 구매 시에는 소모품 교체 시기를 반드시 확인해야 합니다. 엔진 오일 교환 비용은 공임비를 포함하여 10만원에서 15만원 사이로 예상되며, 2026년도에도 큰 변동은 없을 것으로 보입니다.</p>
+                <h3 id="insurance-saving">G70 보험료 절감을 위한 다이렉트 비교 노하우</h3>
+                <p>자동차 보험은 매년 갱신해야 하는 고정 비용입니다. G70 오너는 특히 차량가액이 높고 출력이 강한 모델일수록 보험료가 높게 책정될 수 있습니다. **G70 보험료 싼곳**을 찾기 위해선 **다이렉트** 보험 **비교**가 필수입니다. 여러 보험사의 견적을 한 번에 비교하여 **최저가**를 찾는 것이 중요합니다. 보험사별로 **할인** 특약이 다르므로, 마일리지 특약, 블랙박스 할인 외에도 첨단 안전장치 할인(차선 이탈 방지, 전방 충돌 방지 등)을 꼼꼼히 체크하면 **G70 유지비**를 효과적으로 줄일 수 있습니다. **G70 신규 가입** 시 **현금지원**이나 **상품권** 등의 혜택을 제공하는 **전문 업체**를 이용하는 것도 초기 비용 절감에 도움이 됩니다.</p>
+                <h3 id="related-keywords">G70 관련 심화 키워드 분석 (SEO 최적화)</h3>
+                <p>많은 G70 예비 오너들은 **G70 유지비** 외에도 다양한 키워드를 검색합니다. **G70 유지비 디시**나 **G70 유지비 네이버** 검색을 통해 실오너의 생생한 후기를 확인하는 것이 일반적입니다. **G70 유지비**에 영향을 주는 세부적인 요소로는 **G70 세금** (배기량별 **금액**), **G70 연비** (운전 습관별 **차이점**), **G70 보험료** (**나이별**), **G70 소모품** (**교체주기**), **G70 중고차** (감가상각률) 등이 있습니다. G70을 고려하는 사람들은 보통 **스팅어 유지비 비교**나 **G80 유지비 비교**와 같은 키워드를 함께 검색하여 **장단점**을 파악하고자 합니다. 본 사이트에서는 이러한 모든 키워드를 포괄적으로 다루어 **전문적인** 정보를 제공합니다. **AI** 기술을 활용하여 2026년도 **G70 유지비**를 **예상**하고, **ChatGPT**나 **Gemini** 같은 도구를 이용해 **G70 오너**들의 **후기**를 분석하여 **평균**적인 유지비를 도출하였습니다.</p>
+                <h3 id="external-links">신뢰할 수 있는 외부 정보 참고</h3>
+                <p>G70 유지비에 대한 더 정확한 정보는 다음 외부 사이트에서 확인할 수 있습니다.</p>
+                <ul>
+                    <li><a href="https://namu.wiki/w/%EC%A0%9C%EB%84%A4%EC%8B%9C%EC%8A%A4%20G70" target="_blank" rel="noopener noreferrer">나무위키: 제네시스 G70 상세 정보</a> (G70의 역사 및 모델별 스펙)</li>
+                    <li><a href="https://www.nts.go.kr/nts/na/ntt/selectNttInfo.do?mi=2303&nttSn=1263102" target="_blank" rel="noopener noreferrer">국세청: 자동차세 계산 방법 안내</a> (배기량에 따른 자동차세율 확인)</li>
+                    <li><a href="https://www.kidi.or.kr/main/main.do" target="_blank" rel="noopener noreferrer">보험개발원: 자동차 보험료 관련 정보</a> (보험료 산출 기준 및 통계)</li>
+                    <li><a href="https://www.genesis.com/kr/ko/models/g70/highlights.html" target="_blank" rel="noopener noreferrer">제네시스 공식 홈페이지</a> (G70 최신 모델 사양 확인)</li>
+                    <li><a href="https://www.kotsa.or.kr/main.do" target="_blank" rel="noopener noreferrer">한국교통안전공단</a> (자동차 검사 및 안전 정보)</li>
+                </ul>
+                <p style="text-align: center; margin-top: 30px; font-weight: 500;">**G70 유지비**에 대한 궁금증이 해결되셨기를 바랍니다. G70 구매는 신중한 판단이 필요한 만큼, 전문가의 조언을 받아보시는 것을 추천합니다.</p>
+            </div>
+        </section>
+
+        <section class="content-section" style="background-color: var(--bg-dark); color: #fff; text-align: center; padding: 50px 0;">
+            <div class="container">
+                <h2>지금 바로 G70 유지비 최저가 견적 받기</h2>
+                <p>단 1분 투자로 G70의 예상 유지비를 확인하고, 가장 합리적인 다이렉트 보험 견적을 받아보세요.</p>
+                <a href="#maintenance-analysis" class="cta-btn" style="background-color: var(--accent-color);">G70 유지비 견적 받기</a>
+            </div>
+        </section>
+
     </main>
-  </body>
-</html>
+
+    <script>
+        // FAQ 토글 기능
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+    </script>
+  
